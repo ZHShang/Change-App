@@ -79,8 +79,6 @@ class Api::UsersController < ApplicationController
 
   end
 
-  # private
-
   def user_params
     params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email, :plaid_token, :stripe_token, :current_roundup_balance, :balance_date, :is_admin, votes: [])
   end

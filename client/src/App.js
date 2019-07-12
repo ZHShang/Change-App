@@ -2,7 +2,6 @@ import React, { Component, Children, cloneElement } from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import PlaidLink from './components/PlaidLink';
 import { loadReCaptcha } from 'react-recaptcha-google'
 
 class App extends Component {
@@ -265,7 +264,6 @@ class App extends Component {
     })
   }
 
-
   withRoute = child => {
     return (
       <Route
@@ -335,17 +333,6 @@ class App extends Component {
     return (
       <div className="App">
         {Children.map(children, this.withRoute)}
-        {/*<PlaidLink
-          clientName="Change Collective"
-          env="development"
-          countryCodes={['CA']}
-          product={["auth", "transactions"]}
-          publicKey="2ae89ce59b9f812475f71e0d9aba50"
-          onExit={this.handleOnExit}
-          onSuccess={this.handleOnSuccess}>
-          Open Link and connect your bank!
-        </PlaidLink>*/}
-
       </div>
     );
   }

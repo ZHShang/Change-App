@@ -13,14 +13,15 @@ class Api::TransactionsController < PlaidController
     if Transaction.where(item_id: item)
 
       Transaction.where(item_id: item).destroy_all
-      transaction_response = client.transactions.get(item.access_token, '2019-06-21', '2019-06-29')
+      #Maybe create a now function to get current date to retrieve relevant data
+      transaction_response = client.transactions.get(item.access_token, 'START DATE', 'END DATE')
       transactions = transaction_response.transactions
 
       while transactions.length < transaction_response['total_transactions']
         transaction_response = client.transactions.get(
                                             access_token,
-                                            '2019-06-21',
-                                            '2019-06-29',
+                                            'START DATE',
+                                            'END DATE',
                                             offset: transactions.length)
         transactions += transaction_response.transactions
       end
@@ -80,9 +81,6 @@ class Api::TransactionsController < PlaidController
       roundup: roundup,
       total_balance: @total_balance,
     }
-
-
-
 
 
   end

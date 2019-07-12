@@ -1,5 +1,4 @@
 class Api::ItemsController < PlaidController
-
     def create
     client  = plaid_client
     public_token_response = client.item.public_token.exchange(item_params["public_token"])
