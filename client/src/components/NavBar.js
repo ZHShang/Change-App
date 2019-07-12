@@ -32,9 +32,11 @@ class NavBar extends Component {
             {state.isLoggedIn ? (
             <ButtonToolbar>
             <form onSubmit={handleLogout} >
-              <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
+              <Button type="submit" className='mr-1 logPad' variant="outline-dark">Logout</Button>
             </form>
+            <form>
             <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
+            </form>
           </ButtonToolbar>
             ) : (
           <ButtonToolbar>

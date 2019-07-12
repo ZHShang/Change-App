@@ -26,7 +26,7 @@ class Api::SessionsController < ApplicationController
       transactions = Transaction.where(item_id: currentItem.id)
     end
     render :json => {
-      isLoggedIn:key => "value",  flag,
+      isLoggedIn: flag,
       currentUser: currentUser,
       admin: @admin,
       transactions: transactions,

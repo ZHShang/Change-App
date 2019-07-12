@@ -7,7 +7,7 @@ const goalCompleted = (goals) => {
   return goals.map( goal =>
     <tr>
       <td>{goal.objective}</td>
-
+      <td>{goal.cost}</td>
       <td>{ goal.completed === true ?<Badge variant="success">Success</Badge> :
       null }</td>
     </tr>
@@ -55,25 +55,26 @@ class Dashboard extends Component {
     console.log(this.props.mainState.transactions)
     const trans = this.props.mainState.transactions
     return(
-      <div>
-        <Container fluid>
-          <p pull-right> Hello, {state.first_name} </p>
+        <Container fluid style={{ padding: '2%' }}>
+          <h3 style={{ textAlign: 'left', textTransform: 'none' }}> Hello, {state.first_name} </h3>
           <Row>
             <Col>
-              <p>Your Current Round Ups</p>
               <div className="roundup-bg">
+              <br />
+                <h6>Your Current Round Ups</h6>
                 <p>${state.current_roundup_balance}</p>
+                <br/>
+              <h6>Collective Balance</h6>
                 <p>${state.total_balance}</p>
               </div>
-
             </Col>
             <Col>
-              <p>Collective Achievements</p>
-               {/* {charityList(state.charities)}*/}
-                <Table striped bordered hover size="sm">
+              <h4>Collective Achievements</h4>
+                <Table hover borderd size="sm">
                   <thead>
                     <tr>
                       <th>Goal Objective</th>
+                      <th>Cost</th>
                       <th>Completed</th>
                     </tr>
                   </thead>
@@ -82,18 +83,17 @@ class Dashboard extends Component {
                   </tbody>
                 </Table>
             </Col>
-
           </Row>
           <Row>
-            <div>
-              <Accordion defaultActiveKey="0">
+            <Col>
+              <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="0">
-                    Transactions
+                    <h4 style={{ textAlign: 'left' }} >Transactions <span className="float-right">↓</span></h4>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="0">
                     <Card.Body>
-                    <Table striped bordered hover size="sm">
+                    <Table striped bordered hover >
                       <thead>
                         <tr>
                           <th>Store Name</th>
@@ -117,14 +117,16 @@ class Dashboard extends Component {
                   </Accordion.Collapse>
                 </Card>
               </Accordion>
-            </div>
+            </Col>
           </Row>
+          <br />
           <hr />
+          <br />
           <Row className="mt-5">
             <Col>
-              <p>Your Votes</p>
-              <h3 id="your_votes"></h3>
-              <ReactMinimalPieChart className="your_votes"
+              <h4>Your Votes</h4>
+              <p id="your_votes"></p>
+              <ReactMinimalPieChart className="your_votes chartSize"
                 data={[
                   {
                     title: 'Daily Food Bank',
@@ -142,7 +144,7 @@ class Dashboard extends Component {
                     color: '#9895F7'
                   },
                   {
-                    title: 'Princess Margaret Foundation',
+                    title: 'Princess Margaret Hospital',
                     value: v4,
                     color: '#F18701'
                   },
@@ -167,9 +169,9 @@ class Dashboard extends Component {
               />
             </Col>
             <Col>
-              <p>Collective Votes</p>
-              <h3 id="collective_votes"></h3>
-                <ReactMinimalPieChart
+              <h4>Collective Votes</h4>
+              <p id="collective_votes"></p>
+                <ReactMinimalPieChart className="chartSize"
                   data={[
                     {
                       title: 'Daily Food Bank',
@@ -187,14 +189,14 @@ class Dashboard extends Component {
                       color: '#9895F7'
                     },
                     {
-                      title: 'Princess Margaret Foundation',
+                      title: 'Princess Margaret Hospital',
                       value: a4,
-                      color: '#9895F7'
+                      color: '#F18701'
                     },
                     {
                       title: 'Sick Kids',
                       value: a5,
-                      color: '#F0ECFC'
+                      color: '#F35B04'
                     }
                   ]}
                   lineWidth={15}
@@ -206,14 +208,14 @@ class Dashboard extends Component {
                   }}
                   label={({data, dataIndex}) => (data[dataIndex].value ? (data[dataIndex].title):(null))}
                     labelStyle={{
-                      fontSize: '2px',
+                      fontSize: '2.25px',
                     }}
                     labelPosition={60}
                 />
           </Col>
         </Row>
       </Container>
-    </div>
+
     )
   }
 }

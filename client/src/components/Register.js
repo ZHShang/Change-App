@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap/';
 import "../register.css";
 import { ReCaptcha } from 'react-recaptcha-google';
+import {Link} from 'react-router-dom';
 
 class Register extends Component {
   render() {
@@ -43,7 +44,7 @@ class Register extends Component {
               <Button className="float-right loginbtn" variant="outline-dark" type="submit" disabled={state.disabled} pull-right>
                 Register
               </Button>
-              <p className="extra1">Have an account? <a href="/login">Sign In</a></p>
+              <p className="extra1">Have an account? <Link to="/login">Sign In</Link></p>
               <br/>
               <ReCaptcha
                 ref={(el) => {this.captchaDemo = el;}}

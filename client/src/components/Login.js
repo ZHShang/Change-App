@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../login.css'
 import { Container, Row, Col, Image, Form, Button, ButtonToolbar } from 'react-bootstrap/';
 import {Link} from 'react-router-dom';
-import { HashLink as Links } from 'react-router-hash-link';
 
 
 class Login extends Component {
@@ -31,7 +30,7 @@ class Login extends Component {
               </Button>
               <br/>
               <br/>
-              <p className="extra">Don't have an account? <a href="/register">Sign Up</a></p>
+              <p className="extra">Don't have an account? <Link to="/register">Sign Up</Link></p>
             </Form>
           </Row>
         </Container>

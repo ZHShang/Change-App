@@ -84,45 +84,44 @@ const HeroSection = props => (
         </Col>
       </Row>
       <Row className="home-charities" id="home-charities">
-
         <Col>
           <Image src={'https://i.imgur.com/PdnVWGx.png'} alt="Habitat for Humanity. Habitat pour l'humanité. Canada"  />
           <ul>
             <strong>Goals</strong>
-            <li>Goal 1 </li>
-            <li>Goal 2 </li>
+            <li>Buy New Property</li>
+            <li>Buy More Building Materials</li>
           </ul>
         </Col>
         <Col>
-          <Image src={'https://i.imgur.com/7BkiXTN.png'}  alt="Habitat for Humanity. Habitat pour l'humanité. Canada" />
+          <Image src={'https://i.imgur.com/7BkiXTN.png'}  alt="Daily Bread Food Bank" />
           <ul>
             <strong>Goals</strong>
-            <li>Goal 1 </li>
-            <li>Goal 2 </li>
+            <li>Hire More Chefs</li>
+            <li>Sign Deals with Additional Grocery Stores</li>
           </ul>
         </Col>
         <Col>
-          <Image src={'https://i.imgur.com/HGj2mrR.png'}  alt="Habitat for Humanity. Habitat pour l'humanité. Canada" />
+          <Image src={'https://i.imgur.com/HGj2mrR.png'}  alt="UNH. Princess Margaret Cencer Centre" />
           <ul>
             <strong>Goals</strong>
-            <li>Goal 1 </li>
-            <li>Goal 2 </li>
+            <li>Hire More Researchers</li>
+            <li>Buy new facility equipments</li>
           </ul>
         </Col>
         <Col>
-          <Image src={'https://i.imgur.com/8mO4p7w.png'}  alt="Habitat for Humanity. Habitat pour l'humanité. Canada" />
+          <Image src={'https://i.imgur.com/8mO4p7w.png'}  alt="SickKids" />
           <ul>
             <strong>Goals</strong>
-            <li>Goal 1 </li>
-            <li>Goal 2 </li>
+            <li>Build a MRI Scanner</li>
+            <li>Build a playground</li>
           </ul>
         </Col>
         <Col>
-          <Image src={'https://i.imgur.com/KI4Xl6q.png'} alt="Habitat for Humanity. Habitat pour l'humanité. Canada"  />
+          <Image src={'https://i.imgur.com/KI4Xl6q.png'} alt="Parkinson Canada"  />
           <ul>
             <strong>Goals</strong>
-            <li>Goal 1 </li>
-            <li>Goal 2 </li>
+            <li>Hire More Nurses</li>
+            <li>Build a Recreation Room</li>
           </ul>
         </Col>
       </Row>

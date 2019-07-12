@@ -45,8 +45,13 @@
 
 .home-charities {
   margin-top: 2%;
+  list-style: none;
 }
 
 .home-charities img {
   width: 250px;
+}
+
+.home-charities ul li {
+  list-style: none;
 }
